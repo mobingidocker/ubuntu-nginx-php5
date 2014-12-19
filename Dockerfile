@@ -28,6 +28,7 @@ ADD nginx.conf /etc/nginx/sites-available/default
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config /config
+COPY sudoers /etc/sudoers
 
 EXPOSE 22 80
 CMD ["/usr/bin/supervisord"]
