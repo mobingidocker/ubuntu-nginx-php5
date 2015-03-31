@@ -26,9 +26,12 @@ RUN sed -i -e "s/;catch_workers_output\s*=\s*yes/catch_workers_output = yes/g" /
 
 ADD nginx.conf /etc/nginx/sites-available/default
 
+ADD run.sh /run.sh
+RUN chmod 755 /*.sh
+
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config /config
 COPY sudoers /etc/sudoers
 
 EXPOSE 22 80
-CMD ["/usr/bin/supervisord"]
+CMD ["/run.sh"]
