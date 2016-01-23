@@ -4,7 +4,7 @@
 echo "installing" > /var/log/container_status
 
 # setup webserver doc roots
-DOCROOT=`echo $WEBSERVER_DOCUMENT_ROOT | sed 's/[]\/$*.^|[]/\\&/g'`
+DOCROOT=$(echo $WEBSERVER_DOCUMENT_ROOT | sed 's/[]\/$*.^|[]/\\&/g')
 sed -i -- "s/##WEBSERVER_DOCUMENT_ROOT##/$DOCROOT/g" /etc/nginx/sites-available/default
 
 # Clean double slashes
