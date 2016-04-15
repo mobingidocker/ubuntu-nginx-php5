@@ -32,8 +32,6 @@ ADD nginx.conf /etc/nginx/sites-available/default
 ADD run.sh /run.sh
 ADD fpm.sh /fpm.sh
 RUN chmod 755 /*.sh
-RUN chown -R www-data /usr/share/nginx/www
-RUN chgrp -R www-data /usr/share/nginx/www
 
 COPY php-fpm.conf /etc/php5/fpm/php-fpm.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
