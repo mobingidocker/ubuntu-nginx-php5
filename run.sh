@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 echo "installing" > /var/log/container_status
 
 # setup webserver doc roots
